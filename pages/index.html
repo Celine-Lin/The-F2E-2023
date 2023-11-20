@@ -4,22 +4,49 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>index</title>
+    <title>競選網站</title>
   </head>
-  <body>
-    <%- include('./layout/header'); -%>
-
-    <h1 class="index-title">我是首頁</h1>
-
-    <div class="card" style="width: 18rem">
-      <img src="../assets/images/cat.jpg" class="card-img-top" alt="cat" />
-      <div class="card-body">
-        <h5 class="card-title">卡片元件</h5>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, odit, iusto odio assumenda alias id
-          nobis earum!
-        </p>
+  <body style="min-height: 100vh;" class="d-flex flex-column justify-content-between">
+    <!-- <%- include('./layout/header'); -%> -->
+    <div class="container text-center w-75">
+      <div class="mt-96">
+        <img src="/assets/images/logo.png" alt="logo" width="137px">
+        <h1 class="text-txt-primary mt-8">台灣歷年總統 都幾?</h1>
       </div>
+      <h4 class="text-primary my-24">選擇查詢年份</h4>
+      <div class="container over-flow-hidden">
+        <div class="row row-cols-2 row-cols-lg-5 g-3">
+          <div class="col text-center">
+            <a href="#" class="disabled btn btn-secondary py-12 px-64 fw-bold rounded-pill text-txt-primary">1996</a>
+          </div>
+          <div class="col text-center">
+            <a href="#" class="disabled btn btn-secondary py-12 px-64 fw-bold rounded-pill text-txt-primary">2000</a>
+          </div>
+          <div class="col text-center">        
+            <a href="#" class="disabled btn btn-secondary py-12 px-64 fw-bold rounded-pill text-txt-primary">2004</a>
+          </div>
+          <div class="col text-center">        
+            <a href="#" class="disabled btn btn-secondary py-12 px-64 fw-bold rounded-pill text-txt-primary">2008</a>
+          </div>
+          <div class="col text-center">
+            <a href="#" class="disabled btn btn-secondary py-12 px-64 fw-bold rounded-pill text-txt-primary">2012</a>
+          </div>
+          <div class="col text-center">        
+            <a href="#" class="disabled btn btn-secondary py-12 px-64 fw-bold rounded-pill text-txt-primary">2016</a>
+          </div>
+          <div class="col text-center">        
+            <a href="#" class="btn btn-secondary primary-btn py-12 px-64 fw-bold rounded-pill text-txt-primary">2020</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-evenly align-items-end">
+      <img src="/assets/images/cadidate1.png" alt="candidate 1" width="200px">
+      <img src="/assets/images/cadidate2.png" alt="candidate 2" width="200px">
+      <img src="/assets/images/cadidate3.png" alt="candidate 3" width="200px">
+      <img src="/assets/images/cadidate4.png" alt="candidate 4" width="200px">
+      <img src="/assets/images/cadidate5.png" alt="candidate 5" width="200px">
+      <img src="/assets/images/cadidate6.png" alt="candidate 6" width="200px">
     </div>
 
     <script type="module" src="../main.js"></script>
