@@ -1,4 +1,72 @@
-<h1 class="header">我是 header</h1>
-<a href="index.html">index</a>
-<a href="about.html">about</a>
-<a href="contact.html">contact</a>
+<header>
+    <div class="d-flex align-items-center py-12 px-24 border-bottom">
+        <!-- logo -->
+        <div class="search d-flex align-items-center me-24">
+            <a href="#"><img src="/assets/images/logo-small.png" alt="logo" width="53px" class="me-8"></a>
+            <p class="f-mantou fs-28 mb-0">台灣歷年總統 都幾?</p>
+        </div>
+        <!-- Dropdowns: Year -->
+        <div class="dropdown me-16 d-flex align-items-center">
+            <p class="mb-0 fw-bold me-12">選擇年份</p>
+            <a  class="btn btn-secondary dropdown-toggle rounded-pill" 
+                style="width:118px" 
+                id="dropdownMenuLink"
+                href="#"
+                role="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">
+                <span class="me-24">2020</span>
+            </a>
+            <ul class="dropdown-menu" 
+                style="width:118px" 
+                aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="#">2020</a></li>
+              <li><a class="dropdown-item" href="#">2016</a></li>
+              <li><a class="dropdown-item" href="#">2012</a></li>
+            </ul>
+        </div>
+        <!-- Dropdowns: 縣市 區域 -->
+        <div class="dropdown">
+            <a  class="btn btn-secondary dropdown-toggle d-flex align-items-center" 
+                style="border-radius: 50px 0 0 50px;"
+                id="dropdown-city" 
+                href="#"
+                role="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">
+                <span class="material-symbols-outlined me-12">search</span>
+                <span class="me-24">全部縣市</span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown-city">
+              <li><a class="dropdown-item" href="#">台北市</a></li>
+              <li><a class="dropdown-item" href="#">新北市</a></li>
+              <li><a class="dropdown-item" href="#">高雄市</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <a  class="btn btn-secondary dropdown-toggle ps-0" 
+                style="border-radius: 0 50px 50px 0;"
+                id="dropdown-region" 
+                href="#"
+                role="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">
+                <span class="me-24 border-start border-link-color border-2 ps-12">選擇區域</span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown-region">
+              <li><a class="dropdown-item" href="#">台北市</a></li>
+              <li><a class="dropdown-item" href="#">新北市</a></li>
+              <li><a class="dropdown-item" href="#">高雄市</a></li>
+            </ul>
+        </div>
+        <!-- social media -->
+        <div class="d-flex ms-auto">
+            <p class="me-16 mb-0 ps-0">分享</p>
+            <ul class="d-flex mb-0 ps-0">
+                <li class="me-16 align-center"><a href="#"><img src="/assets/images/icon-fb.png" height="23px" class="align-top" alt="facebook"></a></li>
+                <li class="me-16 align-center"><a href="#"><img src="/assets/images/icon-ig.png" height="23px" class="align-top" alt="instagram"></a></li>
+                <li class="me-16 align-center"><a href="#"><img src="/assets/images/icon-yt.png" height="23px" class="align-top" alt="youtube"></a></li>
+            </ul>
+        </div>
+    </div>
+</header>

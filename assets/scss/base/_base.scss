@@ -1,11 +1,11 @@
-.primary-btn{
-    color: $txt-primary !important;
-    background-color: $secondary !important;
+ul{
+  list-style: none;  
 }
-.primary-btn:hover{
-    color: #fff !important;
-    background-color: $primary !important;
+*{
+  font-family: Roboto;
+  color: $txt-primary;
 }
+
 .f-mantou{
     font-family: "Mantou Sans" !important;
 }
