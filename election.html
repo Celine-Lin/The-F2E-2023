@@ -5,73 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2023 總統大選</title>
-  <script type="module" crossorigin src="/The-F2E-2023/assets/main-01fbb1a6.js"></script>
-  <link rel="stylesheet" href="/The-F2E-2023/assets/main-aae63d06.css">
+  <script type="module" crossorigin src="/The-F2E-2023/assets/main-3444dd2e.js"></script>
+  <link rel="stylesheet" href="/The-F2E-2023/assets/main-d6242410.css">
 </head>
 <body>
     <header>
-    <div class="d-flex align-items-center py-12 px-24 border-bottom">
-        <!-- logo -->
-        <div class="search d-flex align-items-center me-24">
-            <a href="#"><img src="/The-F2E-2023/assets/logo-small-c1065ddf.png" alt="logo" width="53px" class="me-8"></a>
-            <p class="f-mantou fs-28 mb-0">台灣歷年總統 都幾?</p>
-        </div>
-        <!-- Dropdowns: Year -->
-        <div class="dropdown me-16 d-flex align-items-center">
-            <p class="mb-0 fw-bold me-12">選擇年份</p>
-            <a  class="btn btn-secondary dropdown-toggle rounded-pill" 
-                style="width:118px" 
-                id="dropdownMenuLink"
-                href="#"
-                role="button" 
-                data-bs-toggle="dropdown" 
-                aria-expanded="false">
-                <span class="me-24">2020</span>
+    <div class="d-flex flex-column flex-lg-row align-items-center py-12 px-24 border-bottom">
+        <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center">
+            <!-- logo -->
+            <a href="#" class="d-flex align-items-center mb-8 me-sm-24">
+                <img src="/The-F2E-2023/assets/logo-small-c1065ddf.png" alt="logo" width="53px" height="33px" class="me-8 d-none d-xsm-block">
+                <span class="f-mantou fs-28">台灣歷年總統 都幾?</span>
             </a>
-            <ul class="dropdown-menu" 
-                style="width:118px" 
-                aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="#">2020</a></li>
-              <li><a class="dropdown-item" href="#">2016</a></li>
-              <li><a class="dropdown-item" href="#">2012</a></li>
-            </ul>
+            <!-- Dropdowns: Year -->
+            <div class="dropdown me-16 d-flex align-items-center">
+                <p class="d-none d-md-block mb-0 fw-bold me-md-12">選擇年份</p>
+                <a  class="btn btn-secondary dropdown-toggle rounded-pill" 
+                    id="dropdownMenuLink"
+                    href="#"
+                    role="button" 
+                    data-bs-toggle="dropdown" 
+                    aria-expanded="false">
+                    <span class="me-72 me-sm-28">2020</span>
+                </a>
+                <ul class="dropdown-menu" 
+                    style="width:118px" 
+                    aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#">2020</a></li>
+                <li><a class="dropdown-item" href="#">2016</a></li>
+                <li><a class="dropdown-item" href="#">2012</a></li>
+                </ul>
+            </div>
         </div>
         <!-- Dropdowns: 縣市 區域 -->
-        <div class="dropdown">
-            <a  class="btn btn-secondary dropdown-toggle d-flex align-items-center" 
-                style="border-radius: 50px 0 0 50px;"
-                id="dropdown-city" 
-                href="#"
-                role="button" 
-                data-bs-toggle="dropdown" 
-                aria-expanded="false">
-                <span class="material-symbols-outlined me-12">search</span>
-                <span class="me-24">全部縣市</span>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdown-city">
-              <li><a class="dropdown-item" href="#">台北市</a></li>
-              <li><a class="dropdown-item" href="#">新北市</a></li>
-              <li><a class="dropdown-item" href="#">高雄市</a></li>
-            </ul>
-        </div>
-        <div class="dropdown">
-            <a  class="btn btn-secondary dropdown-toggle ps-0" 
-                style="border-radius: 0 50px 50px 0;"
-                id="dropdown-region" 
-                href="#"
-                role="button" 
-                data-bs-toggle="dropdown" 
-                aria-expanded="false">
-                <span class="me-24 border-start border-link-color border-2 ps-12">選擇區域</span>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdown-region">
-              <li><a class="dropdown-item" href="#">台北市</a></li>
-              <li><a class="dropdown-item" href="#">新北市</a></li>
-              <li><a class="dropdown-item" href="#">高雄市</a></li>
-            </ul>
-        </div>
+        <!-- <div class="d-flex"> -->
+            <div class="row row-cols-2 g-0 my-16 my-lg-0">
+                <div class="dropdown col">
+                    <a  class="btn btn-secondary dropdown-toggle d-flex align-items-center" 
+                        style="border-radius: 50px 0 0 50px;"
+                        id="dropdown-city" 
+                        href="#"
+                        role="button" 
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false">
+                        <span class="material-symbols-outlined me-8 me-xsm-12 d-none d-xsm-block">search</span>
+                        <span class="me-20 me-xsm-28 me-sm-96 me-lg-48">全部縣市</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown-city">
+                    <li><a class="dropdown-item" href="#">台北市</a></li>
+                    <li><a class="dropdown-item" href="#">新北市</a></li>
+                    <li><a class="dropdown-item" href="#">高雄市</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown col">
+                    <a  class="btn btn-secondary dropdown-toggle ps-0 text-start" 
+                        style="border-radius: 0 50px 50px 0;"
+                        id="dropdown-region" 
+                        href="#"
+                        role="button" 
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false">
+                        <span class="ms-8 me-20 me-xsm-28 me-sm-96 me-lg-48 border-start border-link-color border-2 ps-12">選擇區域</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown-region">
+                    <li><a class="dropdown-item" href="#">台北市</a></li>
+                    <li><a class="dropdown-item" href="#">新北市</a></li>
+                    <li><a class="dropdown-item" href="#">高雄市</a></li>
+                    </ul>
+                </div>
+            </div>
+        <!-- </div> -->
+        
         <!-- social media -->
-        <div class="d-flex ms-auto">
+        <div class="d-none d-xl-flex ms-auto">
             <p class="me-16 mb-0 ps-0">分享</p>
             <ul class="d-flex mb-0 ps-0">
                 <li class="me-16 align-center"><a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAP2SURBVHgB1ZnLbtNAFIZ/30JFQVgskIAFRgIWQNuEF8DZI3F5gaZSW8QKeIImTwBdIKS2UtMXgHbBumbHBiWl7QaEajaAkApB4lLq2OYcJ43S1k7s2K3TbxGPPePozPE/Z2bOAEcQATFZw7MsIOuANAK4WQGu2l7vQqjRM9OBuwI4Rh0D1RzGaohBT0ZX8FzLQB51gUd0q0Z9nzqxaMNdGMb9RfRAJKPZWAXyPBV1JIAAwXThlK5jshztvRBUMK8qqE+h4dnEYeO3YeVzeGCGa9+FhhSkZdKmhgOGjClew0SpWzuxU+U7zN0hOVQOw2CGxkhxDbNPurUL9PQa5kbpb8pIBaF8HeNjgbV+D9nDItyXSJVgw/fJgzVMBs8jddzCOman/Gr2eXodMxtJaVhUMxjUzyKjnfTKjFPbhl37B8v8hb/VTe++E6Tz/BAmDAQZzT3jwYCYKNoJnJm6AbVwpWO7H+UP+Dz2umObRjiUcu2zaEseLIskDB7Insalyr2uBofFhavJ2N41P7SMVqBMISbs4YvLt1pSSAoB4kOe4HbuPaPZyyx8xIQlkbTBTdR2b3tGK5B0xIS9nJQk/BAh3t4py42LMIqYDOrnOtZvVb9jc3rVu9rNiMFRJCw03rKrmNU5ksgNrdR1xIQHYBAc3j7mXiAuAhxau8MQZWxlkQCSeiyw7lvpLZJB0PmXNC3qOGDY00lAUWSEryJpRcMRgWM2y1mkUXkBR4hjsE+JOILIEdsHxuOBkeDooY5ewXFaOO2lVn7fk97l5hY/9Au8YuOZLwpq4bLv8z/Gl56MpoFo/0RKbNHSNCpXMf6JBiKqSAHbW1dvR33NW56KDiQTKdCLl9F0sGhDMpACWyvRjabEjrdjkHlHQNt2AyGzRrzI4QG0F4UGKEcWXwN9tlW/ff6jO6LBv17I4x7QFKmHeY1XaRv5V/ueny/fhKr5R4mvj9/0aGQ7gjmEcYNL3uRSR+YpmiLvX5xW5skzmiXiAEvoYyzYxk65NY3bqBfRp96mqa/UnpxsGc0PSdvT6DsEsw75afuTXQumhrZdE32FU9p7crDLaK60gLvoE5mwLPwS7vuWpjlMVul85DFShhb8i7SJLfrV+a6nh6l33EukR7UOJTDVG7gJ4F6SxwNfPCjYwxbkfKcTsI47F/a4BTd3WIOTv+4QJu92O7Lrut1ijVNgz9Pks4ADg0+5vJRuMUzrUHtEjuHDmChYqF+kWwPJUWPvWpTK3ZuD7kSkPWJzVspXMJOVIDyiE4Ob5CUN0TEo/i5ZyJR7Ob2NvLFlWDJ0KXCZ82tkgC4NytQBL4ei7bTj5ShlUU0q0ucXViitRVJTFuMeM/8HGXZisA5ccscAAAAASUVORK5CYII=" height="23px" class="align-top" alt="facebook"></a></li>
