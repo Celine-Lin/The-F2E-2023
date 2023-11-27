@@ -30,3 +30,6 @@ $headings-font-family: "Inter" !default;
 $aspect-ratios: (
   "9x21": calc(21 / 9 * 100%),
 );
+
+// table
+$table-hover-bg: rgba($secondary, 0.4);
