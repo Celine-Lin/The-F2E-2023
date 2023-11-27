@@ -3,6 +3,7 @@ $primary:         #D4009B;
 $secondary:       #E9ECEF; // bg color
 $txt-primary:     #334155;
 $txt-secondary:   #64748B;
+$txt-third:       #F3F4F4;
 $hover-color:     #F8F9FA; 
 $line-color:      #DEE2E6;
 $role-1:          #8082FF;
@@ -14,6 +15,7 @@ $theme-colors: (
   "secondary":   $secondary,
   "txt-primary":  $txt-primary,
   "txt-secondary": $txt-secondary,
+  "txt-third":     $txt-third,
   "hover-color":  $hover-color,
   "line-color": $line-color,
   "role-1":   $role-1,
@@ -23,3 +25,8 @@ $theme-colors: (
 
 // fonts
 $headings-font-family: "Inter" !default;
+
+// ratios
+$aspect-ratios: (
+  "9x21": calc(21 / 9 * 100%),
+);
