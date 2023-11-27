@@ -19,28 +19,26 @@ const chartBarParty = c3.generate({
     },
     axis: {
         y: {
-            max: 2000,
-            min: 0,
-            padding: {top:0, bottom:0}
+          max: 2000,
+          min: 0,
+          tick: {
+            values: [0, 500, 1000, 1500, 2000],
+            format: function (d) { return d + '萬' ; },
+          },
+          padding: {top:0, bottom:0}
         }
-    },
+      },
     bar: {
         width: {
             ratio: 0.5 // this makes bar width 50% of length between ticks
         }
     },
     legend: {
-        // position: 'inset'
+        show: false
     },
     grid: {
         y: {
-          lines: [
-            {value: 0},
-            {value: 500},
-            {value: 1000},
-            {value: 1500},
-            {value: 2000},
-          ]
+          show: true,
         }
       }
 });
