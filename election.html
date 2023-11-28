@@ -32,11 +32,11 @@
         3. 縣市、區域選單
         4. 分享
  -->
-<header class="overflow-auto">
+<header class="overflow-visible">
     <div class="d-flex flex-column flex-lg-row align-items-center py-12 px-24 border-bottom">
         <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center">
             <!-- 1. 網頁標題、Logo -->
-            <a href="#" class="d-flex align-items-center mb-8 me-sm-24">
+            <a href="index.html" class="d-flex align-items-center mb-8 me-sm-24">
                 <img src="/The-F2E-2023/assets/logo-small-c1065ddf.png" alt="logo" width="53px" height="33px" class="me-8 d-none d-xsm-block">
                 <span class="f-mantou fs-28">台灣歷年總統 都幾?</span>
             </a>
@@ -128,9 +128,9 @@
                 <!-- 3-1. 總統得票數 -->
                 <section class="bg-txt-third p-16 rounded rounded-3 mb-24">
                     <h5 class="pt-8">總統得票數</h5>
-                    <div class="d-flex">
+                    <div class="row row-cols-2 g-2">
                         <!-- (1) 個人得票數 -->
-                        <div class="px-24 py-16 bg-white rounded rounded-3 me-12">
+                        <div class="col-7 px-24 py-16 bg-white rounded rounded-3">
                                 <!-- 候選人 -->
                                 <div class="d-flex mb-12">
                                     <!-- 候選人 1 -->
@@ -169,27 +169,27 @@
                                 </div>
                         </div>
                         <!-- (2) 全民投票數 -->
-                        <div class="px-12 py-16 bg-white rounded rounded-3 d-flex">
+                        <div class="col-5 px-12 py-16 bg-white rounded rounded-3 d-flex justify-content-center">
                                 <!-- File: chart-vote-rate.js -->
-                                <div id="chartVoteRate" class="me-12"></div>
+                                <div id="chartVoteRate" class="me-24"></div>
                                 <!-- 投票數、投票率... -->
                                 <div class="d-flex flex-column justify-content-between">
                                     <div class="d-flex">
-                                        <div class="pe-24">
+                                        <div class="pe-32">
                                             <p class="mb-4 text-txt-secondary fs-14">投票數</p>
                                             <p class="mb-4 fw-bold">12,448,302</p>
                                         </div>
-                                        <div class="pe-24">
+                                        <div class="pe-32">
                                             <p class="mb-4 text-txt-secondary fs-14">投票率</p>
                                             <p class="mb-4 fw-bold">66.27%</p>
                                         </div>
                                     </div>
                                     <div class="d-flex">
-                                        <div class="pe-24">
+                                        <div class="pe-32">
                                             <p class="mb-4 text-txt-secondary fs-14">有效票數</p>
                                             <p class="mb-4 fw-bold">12,284,970</p>
                                         </div>
-                                        <div class="pe-24">
+                                        <div class="pe-32">
                                             <p class="mb-4 text-txt-secondary fs-14">無效票數</p>
                                             <p class="mb-4 fw-bold">163,332</p>
                                         </div>
