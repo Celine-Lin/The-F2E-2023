@@ -1,7 +1,6 @@
 const chartLineParty = c3.generate({
     bindto: '#chartLineParty',
     size: {
-        width: 370,
         height: 200
     },
     color: {
@@ -28,8 +27,8 @@ const chartLineParty = c3.generate({
         },
         x: {
             padding: {
-                left: 1,
-                right: 1,
+                left: 2,
+                right: 2,
             }
         }
     },

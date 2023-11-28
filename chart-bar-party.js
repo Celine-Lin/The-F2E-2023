@@ -1,7 +1,6 @@
 const chartBarParty = c3.generate({
     bindto: '#chartBarParty',
     size: {
-        width: 450,
         height: 200
     },
     color: {

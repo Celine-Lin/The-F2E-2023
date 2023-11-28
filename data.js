@@ -154,8 +154,8 @@ function render(){
             <img src="${cadidate1}" class="rounded-circle me-8" width="32px" alt="candidate 1">
             <span class="align-middle">${i.electee}</span>
         </td>
-        <td>${i.votes}</td>
-        <td>${i.voteRate}</td>
+        <td class="d-none d-sm-table-cell">${i.votes}</td>
+        <td class="d-none d-md-table-cell">${i.voteRate}</td>
         <td>
             <a href="#"><span class="material-symbols-outlined">chevron_right</span></a>
         </td>

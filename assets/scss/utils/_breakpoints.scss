@@ -25,4 +25,12 @@
 }
 
 // xl
-@media(min-width: 1200px){}
+@media(min-width: 1200px){
+    body{
+        overflow: hidden;
+        height: 100vh !important;
+    }
+    aside{
+        height: auto !important;
+    }
+}
