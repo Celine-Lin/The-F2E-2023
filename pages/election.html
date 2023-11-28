@@ -37,73 +37,79 @@
                 <!-- 3-1. 總統得票數 -->
                 <section class="bg-txt-third p-16 rounded rounded-3 mb-24">
                     <h5 class="pt-8">總統得票數</h5>
-                    <div class="row row-cols-2 g-2">
-                        <!-- (1) 個人得票數 -->
-                        <div class="col-7 px-24 py-16 bg-white rounded rounded-3">
-                                <!-- 候選人 -->
-                                <div class="d-flex mb-12">
-                                    <!-- 候選人 1 -->
-                                    <div class="d-flex">
-                                        <img src="/assets/images/small-cadidate1.png" width="48px" height="48px" alt="candidate 1">
-                                        <div class="px-12">
-                                            <p class="mb-4 fs-12 text-txt-secondary">蝙蝠黨</p>
-                                            <p class="mb-4">德古拉</p>
-                                            <p class="mb-4 fw-bold">8,170,231 <span class="fw-normal">票</span></p>
+                    <div class="container px-8">
+                        <div class="row g-2">
+                            <!-- (1) 個人得票數 -->
+                            <div class="col-7">
+                                <div class="px-24 py-16 bg-white rounded rounded-3 h-100">
+                                        <!-- 候選人 -->
+                                        <div class="d-flex mb-12">
+                                            <!-- 候選人 1 -->
+                                            <div class="d-flex">
+                                                <img src="/assets/images/small-cadidate1.png" width="48px" height="48px" alt="candidate 1">
+                                                <div class="px-12">
+                                                    <p class="mb-4 fs-12 text-txt-secondary">蝙蝠黨</p>
+                                                    <p class="mb-4">德古拉</p>
+                                                    <p class="mb-4 fw-bold">8,170,231 <span class="fw-normal">票</span></p>
+                                                </div>
+                                            </div>
+                                            <!-- 候選人 2 -->
+                                            <div class="d-flex">
+                                                <img src="/assets/images/small-cadidate2.png" width="48px" height="48px" alt="candidate 2">
+                                                <div class="px-12">
+                                                    <p class="mb-4 fs-12 text-txt-secondary">弓箭黨</p>
+                                                    <p class="mb-4">林克</p>
+                                                    <p class="mb-4 fw-bold">5,522,119 <span class="fw-normal">票</span></p>
+                                                </div>
+                                            </div>
+                                            <!-- 候選人 3 -->
+                                            <div class="d-flex">
+                                                <img src="/assets/images/small-cadidate3.png" width="48px" height="48px" alt="candidate 3">
+                                                <div class="px-12">
+                                                    <p class="mb-4 fs-12 text-txt-secondary">木棍黨</p>
+                                                    <p class="mb-4">綠巨魔</p>
+                                                    <p class="mb-4 fw-bold">608,590 <span class="fw-normal">票</span></p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- 候選人 2 -->
-                                    <div class="d-flex">
-                                        <img src="/assets/images/small-cadidate2.png" width="48px" height="48px" alt="candidate 2">
-                                        <div class="px-12">
-                                            <p class="mb-4 fs-12 text-txt-secondary">弓箭黨</p>
-                                            <p class="mb-4">林克</p>
-                                            <p class="mb-4 fw-bold">5,522,119 <span class="fw-normal">票</span></p>
+                                        <!-- 圖表：候選人得票比率 -->
+                                        <div class="progress">
+                                            <div class="progress-bar bg-role-1" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+                                            <div class="progress-bar bg-role-2" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                                            <div class="progress-bar bg-role-3" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
                                         </div>
-                                    </div>
-                                    <!-- 候選人 3 -->
-                                    <div class="d-flex">
-                                        <img src="/assets/images/small-cadidate3.png" width="48px" height="48px" alt="candidate 3">
-                                        <div class="px-12">
-                                            <p class="mb-4 fs-12 text-txt-secondary">木棍黨</p>
-                                            <p class="mb-4">綠巨魔</p>
-                                            <p class="mb-4 fw-bold">608,590 <span class="fw-normal">票</span></p>
-                                        </div>
-                                    </div>
                                 </div>
-                                <!-- 圖表：候選人得票比率 -->
-                                <div class="progress">
-                                    <div class="progress-bar bg-role-1" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
-                                    <div class="progress-bar bg-role-2" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
-                                    <div class="progress-bar bg-role-3" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                            </div>
+                            <!-- (2) 全民投票數 -->
+                            <div class="col-5">
+                                <div class="px-12 py-16 bg-white rounded rounded-3 d-flex justify-content-center h-100">
+                                        <!-- File: chart-vote-rate.js -->
+                                        <div id="chartVoteRate" class="me-24"></div>
+                                        <!-- 投票數、投票率... -->
+                                        <div class="d-flex flex-column justify-content-between">
+                                            <div class="d-flex">
+                                                <div class="pe-32">
+                                                    <p class="mb-4 text-txt-secondary fs-14">投票數</p>
+                                                    <p class="mb-4 fw-bold">12,448,302</p>
+                                                </div>
+                                                <div class="pe-32">
+                                                    <p class="mb-4 text-txt-secondary fs-14">投票率</p>
+                                                    <p class="mb-4 fw-bold">66.27%</p>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="pe-32">
+                                                    <p class="mb-4 text-txt-secondary fs-14">有效票數</p>
+                                                    <p class="mb-4 fw-bold">12,284,970</p>
+                                                </div>
+                                                <div class="pe-32">
+                                                    <p class="mb-4 text-txt-secondary fs-14">無效票數</p>
+                                                    <p class="mb-4 fw-bold">163,332</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                 </div>
-                        </div>
-                        <!-- (2) 全民投票數 -->
-                        <div class="col-5 px-12 py-16 bg-white rounded rounded-3 d-flex justify-content-center">
-                                <!-- File: chart-vote-rate.js -->
-                                <div id="chartVoteRate" class="me-24"></div>
-                                <!-- 投票數、投票率... -->
-                                <div class="d-flex flex-column justify-content-between">
-                                    <div class="d-flex">
-                                        <div class="pe-32">
-                                            <p class="mb-4 text-txt-secondary fs-14">投票數</p>
-                                            <p class="mb-4 fw-bold">12,448,302</p>
-                                        </div>
-                                        <div class="pe-32">
-                                            <p class="mb-4 text-txt-secondary fs-14">投票率</p>
-                                            <p class="mb-4 fw-bold">66.27%</p>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="pe-32">
-                                            <p class="mb-4 text-txt-secondary fs-14">有效票數</p>
-                                            <p class="mb-4 fw-bold">12,284,970</p>
-                                        </div>
-                                        <div class="pe-32">
-                                            <p class="mb-4 text-txt-secondary fs-14">無效票數</p>
-                                            <p class="mb-4 fw-bold">163,332</p>
-                                        </div>
-                                    </div>
-                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
