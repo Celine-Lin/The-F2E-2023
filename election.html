@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2023 總統大選</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.css" rel="stylesheet">
-  <script type="module" crossorigin src="/The-F2E-2023/assets/data-d3212848.js"></script>
-  <link rel="stylesheet" href="/The-F2E-2023/assets/data-06660a43.css">
+  <script type="module" crossorigin src="/The-F2E-2023/assets/data-e5d48489.js"></script>
+  <link rel="stylesheet" href="/The-F2E-2023/assets/data-b8574680.css">
 </head>
 <!-- 
     body 結構:
         1. header EJS
         2. aside: 台灣地圖
+            (1) Modal: Map EJS
         3. main: 全臺縣市總統得票
             3-1. 總統得票數
                 (1) 個人得票數
@@ -23,7 +24,7 @@
             3-3. 各縣市投票總覽 | data.js
         4. footer EJS
  -->
-<body class="overflow-hidden" style="height: 100vh">
+<body>
     <!-- 1. header EJS -->
     <!-- 
     Structure:
@@ -124,27 +125,61 @@
         </div>
     </div>
 </header>
-    <div class="d-flex h-100">
+    <div class="d-flex flex-column flex-xl-row h-100">
         <!-- 2. aside: 台灣地圖 -->
-        <aside class="bg-map-blue w-25">
-            <img src="/The-F2E-2023/assets/map-0646b254.png" class="py-24 px-8 w-100 bg-map-blue" alt="Taiwan map">
+        <aside class="bg-map-blue col-xl-3 overflow-hidden position-relative" style="height: 200px;">
+            <!-- Modal: Map EJS -->
+            <!-- Button trigger modal -->
+<div class="w-100 h-100 opacity-25 position-absolute bg-black d-xl-none"></div>
+<button 
+    type="button" 
+    class="btn btn-primary fs-14 position-absolute top-50 start-50 translate-middle d-xl-none" 
+    data-bs-toggle="modal" 
+    data-bs-target="#modalMap">
+    進入地圖
+</button>
+<!-- Modal -->
+<div 
+    class="modal fade" 
+    id="modalMap" 
+    data-bs-backdrop="static" 
+    data-bs-keyboard="false" 
+    tabindex="-1" 
+    aria-labelledby="modalMapLabel" 
+    aria-hidden="true">
+<div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalMapLabel">台灣地圖</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+            <img src="/The-F2E-2023/assets/map-0646b254.png" class="w-100 bg-map-blue" alt="Taiwan map">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary col" data-bs-dismiss="modal">返回</button>
+            <button type="button" class="btn btn-primary col">搜尋</button>
+        </div>
+    </div>
+</div>
+</div>            <img src="/The-F2E-2023/assets/map-0646b254.png" class="py-24 px-8 w-100 bg-map-blue" alt="Taiwan map">
         </aside>
         <!-- 3. main: 全臺縣市總統得票 -->
-        <main class="w-75 overflow-auto">
+        <main class="col-xl-9 overflow-auto">
             <div class="container px-24">
                 <h3 class="mt-32 mb-12 fw-bold">全臺縣市總統得票</h3>
                 <!-- 3-1. 總統得票數 -->
                 <section class="bg-txt-third p-16 rounded rounded-3 mb-24">
                     <h5 class="pt-8">總統得票數</h5>
-                    <div class="container px-8">
+                    <div class="container-fluid p-0">
                         <div class="row g-2">
                             <!-- (1) 個人得票數 -->
-                            <div class="col-7">
-                                <div class="px-24 py-16 bg-white rounded rounded-3 h-100">
+                            <div class="col col-xl-7">
+                                <div class="p-24 p-sm-12 p-md-24 bg-white rounded rounded-3 h-100">
                                         <!-- 候選人 -->
-                                        <div class="d-flex mb-12">
+                                        <div class="d-flex mb-12 flex-column flex-sm-row justify-content-evenly">
                                             <!-- 候選人 1 -->
-                                            <div class="d-flex">
+                                            <div class="d-flex mb-8 mb-xl-0">
                                                 <img src="/The-F2E-2023/assets/small-cadidate1-5c3e59a1.png" width="48px" height="48px" alt="candidate 1">
                                                 <div class="px-12">
                                                     <p class="mb-4 fs-12 text-txt-secondary">蝙蝠黨</p>
@@ -153,7 +188,7 @@
                                                 </div>
                                             </div>
                                             <!-- 候選人 2 -->
-                                            <div class="d-flex">
+                                            <div class="d-flex mb-8 mb-xl-0">
                                                 <img src="/The-F2E-2023/assets/small-cadidate2-fe9bbdf3.png" width="48px" height="48px" alt="candidate 2">
                                                 <div class="px-12">
                                                     <p class="mb-4 fs-12 text-txt-secondary">弓箭黨</p>
@@ -172,7 +207,7 @@
                                             </div>
                                         </div>
                                         <!-- 圖表：候選人得票比率 -->
-                                        <div class="progress">
+                                        <div class="progress my-8 my-xl-0">
                                             <div class="progress-bar bg-role-1" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
                                             <div class="progress-bar bg-role-2" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
                                             <div class="progress-bar bg-role-3" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
@@ -180,31 +215,27 @@
                                 </div>
                             </div>
                             <!-- (2) 全民投票數 -->
-                            <div class="col-5">
-                                <div class="px-12 py-16 bg-white rounded rounded-3 d-flex justify-content-center h-100">
+                            <div class="col col-xl-5">
+                                <div class="px-12 py-16 bg-white rounded rounded-3 d-flex justify-content-evenly align-items-center h-100">
                                         <!-- File: chart-vote-rate.js -->
-                                        <div id="chartVoteRate" class="me-24"></div>
+                                        <div id="chartVoteRate" class="me-24 me-xl-12"></div>
                                         <!-- 投票數、投票率... -->
-                                        <div class="d-flex flex-column justify-content-between">
-                                            <div class="d-flex">
-                                                <div class="pe-32">
-                                                    <p class="mb-4 text-txt-secondary fs-14">投票數</p>
-                                                    <p class="mb-4 fw-bold">12,448,302</p>
-                                                </div>
-                                                <div class="pe-32">
-                                                    <p class="mb-4 text-txt-secondary fs-14">投票率</p>
-                                                    <p class="mb-4 fw-bold">66.27%</p>
-                                                </div>
+                                        <div class="d-flex flex-wrap justify-content-between justify-content-sm-evenly justify-content-lg-between">
+                                            <div class="pe-40 mb-8 col-xl-6">
+                                                <p class="mb-4 text-txt-secondary fs-14">投票數</p>
+                                                <p class="mb-4 fw-bold">12,448,302</p>
                                             </div>
-                                            <div class="d-flex">
-                                                <div class="pe-32">
-                                                    <p class="mb-4 text-txt-secondary fs-14">有效票數</p>
-                                                    <p class="mb-4 fw-bold">12,284,970</p>
-                                                </div>
-                                                <div class="pe-32">
-                                                    <p class="mb-4 text-txt-secondary fs-14">無效票數</p>
-                                                    <p class="mb-4 fw-bold">163,332</p>
-                                                </div>
+                                            <div class="pe-40 mb-8 col-xl-6">
+                                                <p class="mb-4 text-txt-secondary fs-14">投票率</p>
+                                                <p class="mb-4 fw-bold">66.27%</p>
+                                            </div>
+                                            <div class="pe-40 mb-8 mb-xl-0 col-xl-6">
+                                                <p class="mb-4 text-txt-secondary fs-14">有效票數</p>
+                                                <p class="mb-4 fw-bold">12,284,970</p>
+                                            </div>
+                                            <div class="pe-40 col-xl-6">
+                                                <p class="mb-4 text-txt-secondary fs-14">無效票數</p>
+                                                <p class="mb-4 fw-bold">163,332</p>
                                             </div>
                                         </div>
                                 </div>
@@ -213,10 +244,10 @@
                     </div>
                 </section>
                 <!-- 3-2. 政黨得票數 -->
-                <section class="d-flex mb-24">
+                <section class="d-flex flex-column flex-lg-row mb-24">
                     <!-- (1) 得票數  -->
-                    <div class="p-16 border border-secondary rounded rounded-3 me-20">
-                        <div class="d-flex justify-content-between align-items-center pb-20 py-16">
+                    <div class="p-16 border border-secondary rounded rounded-3 me-20 w-100 w-lg-50 mb-16 mb-lg-0">
+                        <div class="d-flex flex-column justify-content-between align-items-center pb-20 py-16">
                             <h5>歷屆政黨得票數</h5>
                             <!-- 圖表標示 -->
                             <ul class="d-flex m-0 p-0">
@@ -247,8 +278,8 @@
                         <div id="chartBarParty" class="me-12"></div>
                     </div>
                     <!-- (2) 得票率  -->
-                    <div class="p-16 border border-secondary rounded rounded-3">
-                        <div class="d-flex justify-content-between align-items-center pb-20 py-16">
+                    <div class="p-16 border border-secondary rounded rounded-3 w-100 w-lg-50">
+                        <div class="d-flex flex-column justify-content-between align-items-center pb-20 py-16">
                             <h5>歷屆政黨得票率</h5>
                             <!-- 圖表標示 -->
                             <ul class="d-flex m-0 p-0">
@@ -288,8 +319,8 @@
                             <th scope="col" style="width: 15%;">地區</th>
                             <th scope="col" style="width: 20%;">得票率</th>
                             <th scope="col" style="width: 22%;">當選人</th>
-                            <th scope="col" style="width: 18%;">投票數</th>
-                            <th scope="col" style="width: 18%;">投票率</th>
+                            <th scope="col" style="width: 18%;" class="d-none d-sm-table-cell">投票數</th>
+                            <th scope="col" style="width: 18%;" class="d-none d-md-table-cell">投票率</th>
                             <th scope="col" style="width: 7%;"></th>
                         </tr>
                         </thead>
@@ -301,7 +332,7 @@
             </div>
             <!-- 4. footer EJS -->
             <footer class="bg-secondary text-center">
-    <p class="px-24 py-16 fs-14">版權所有©2023 台灣歷年總統 都幾?</p>
+    <p class="px-24 py-16 fs-14 mb-0">版權所有©2023 台灣歷年總統 都幾?</p>
 </footer>        </main>
     </div>
 
