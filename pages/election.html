@@ -7,133 +7,195 @@
     <title>2023 總統大選</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.css" rel="stylesheet">
 </head>
-<body>
+<!-- 
+    body 結構:
+        1. header EJS
+        2. aside: 台灣地圖
+        3. main: 全臺縣市總統得票
+            3-1. 總統得票數
+                (1) 個人得票數
+                (2) 全民投票數 | chart-vote-rate.js
+            3-2. 政黨得票數
+                (1) 得票數 | chart-bar-party.js
+                (2) 得票率 | chart-line-party.js
+            3-3. 各縣市投票總覽 | data.js
+        4. footer EJS
+ -->
+<body class="overflow-hidden" style="height: 100vh">
+    <!-- 1. header EJS -->
     <%- include('./layout/header'); -%>
-     <!-- Section: 地圖 -->
-    <div class="row">
-        <aside class="col-3 bg-secondary" height="100vh">
-            <img src="/assets/images/map.png" class="py-24" width="100%" alt="Taiwan map">
-            <!-- <div class="ratio ratio-9x21">
-                <iframe src="../assets/images/map.svg"></iframe>
-            </div> -->
+
+    <div class="d-flex h-100">
+        <!-- 2. aside: 台灣地圖 -->
+        <aside class="bg-map-blue w-25">
+            <img src="/assets/images/map.png" class="py-24 px-8 w-100 bg-map-blue" alt="Taiwan map">
         </aside>
-        <main class="col-9 px-24">
-            <h3 class="mt-32 mb-12 fw-bold">全臺縣市總統得票</h3>
-            <!-- Section: 總統得票數 -->
-            <div class="bg-txt-third p-16 rounded rounded-3 mb-24">
-                <h5 class="pt-8">總統得票數</h5>
-                <div class="d-flex">
-                    <!-- votes by candidate -->
-                    <div class="px-24 py-16 bg-white rounded rounded-3 me-12">
-                        <!-- candidate info -->
-                        <div class="d-flex mb-12">
-                            <!-- candidate 1 -->
-                            <div class="d-flex">
-                                <img src="/assets/images/small-cadidate1.png" width="48px" height="48px" alt="candidate 1">
-                                <div class="px-12">
-                                    <p class="mb-4 fs-12 text-txt-secondary">蝙蝠黨</p>
-                                    <p class="mb-4">德古拉</p>
-                                    <p class="mb-4 fw-bold">8,170,231 <span class="fw-normal">票</span></p>
+        <!-- 3. main: 全臺縣市總統得票 -->
+        <main class="w-75 overflow-auto">
+            <div class="container px-24">
+                <h3 class="mt-32 mb-12 fw-bold">全臺縣市總統得票</h3>
+                <!-- 3-1. 總統得票數 -->
+                <section class="bg-txt-third p-16 rounded rounded-3 mb-24">
+                    <h5 class="pt-8">總統得票數</h5>
+                    <div class="d-flex">
+                        <!-- (1) 個人得票數 -->
+                        <div class="px-24 py-16 bg-white rounded rounded-3 me-12">
+                                <!-- 候選人 -->
+                                <div class="d-flex mb-12">
+                                    <!-- 候選人 1 -->
+                                    <div class="d-flex">
+                                        <img src="/assets/images/small-cadidate1.png" width="48px" height="48px" alt="candidate 1">
+                                        <div class="px-12">
+                                            <p class="mb-4 fs-12 text-txt-secondary">蝙蝠黨</p>
+                                            <p class="mb-4">德古拉</p>
+                                            <p class="mb-4 fw-bold">8,170,231 <span class="fw-normal">票</span></p>
+                                        </div>
+                                    </div>
+                                    <!-- 候選人 2 -->
+                                    <div class="d-flex">
+                                        <img src="/assets/images/small-cadidate2.png" width="48px" height="48px" alt="candidate 2">
+                                        <div class="px-12">
+                                            <p class="mb-4 fs-12 text-txt-secondary">弓箭黨</p>
+                                            <p class="mb-4">林克</p>
+                                            <p class="mb-4 fw-bold">5,522,119 <span class="fw-normal">票</span></p>
+                                        </div>
+                                    </div>
+                                    <!-- 候選人 3 -->
+                                    <div class="d-flex">
+                                        <img src="/assets/images/small-cadidate3.png" width="48px" height="48px" alt="candidate 3">
+                                        <div class="px-12">
+                                            <p class="mb-4 fs-12 text-txt-secondary">木棍黨</p>
+                                            <p class="mb-4">綠巨魔</p>
+                                            <p class="mb-4 fw-bold">608,590 <span class="fw-normal">票</span></p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- candidate 2 -->
-                            <div class="d-flex">
-                                <img src="/assets/images/small-cadidate2.png" width="48px" height="48px" alt="candidate 2">
-                                <div class="px-12">
-                                    <p class="mb-4 fs-12 text-txt-secondary">弓箭黨</p>
-                                    <p class="mb-4">林克</p>
-                                    <p class="mb-4 fw-bold">5,522,119 <span class="fw-normal">票</span></p>
+                                <!-- 圖表：候選人得票比率 -->
+                                <div class="progress">
+                                    <div class="progress-bar bg-role-1" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+                                    <div class="progress-bar bg-role-2" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                                    <div class="progress-bar bg-role-3" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
                                 </div>
-                            </div>
-                            <!-- candidate 3 -->
-                            <div class="d-flex">
-                                <img src="/assets/images/small-cadidate3.png" width="48px" height="48px" alt="candidate 3">
-                                <div class="px-12">
-                                    <p class="mb-4 fs-12 text-txt-secondary">木棍黨</p>
-                                    <p class="mb-4">綠巨魔</p>
-                                    <p class="mb-4 fw-bold">608,590 <span class="fw-normal">票</span></p>
-                                </div>
-                            </div>
                         </div>
-                        <!-- chart % -->
-                        <div class="progress">
-                            <div class="progress-bar bg-role-1" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
-                            <div class="progress-bar bg-role-2" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
-                            <div class="progress-bar bg-role-3" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                        <!-- (2) 全民投票數 -->
+                        <div class="px-12 py-16 bg-white rounded rounded-3 d-flex">
+                                <!-- File: chart-vote-rate.js -->
+                                <div id="chartVoteRate" class="me-12"></div>
+                                <!-- 投票數、投票率... -->
+                                <div class="d-flex flex-column justify-content-between">
+                                    <div class="d-flex">
+                                        <div class="pe-24">
+                                            <p class="mb-4 text-txt-secondary fs-14">投票數</p>
+                                            <p class="mb-4 fw-bold">12,448,302</p>
+                                        </div>
+                                        <div class="pe-24">
+                                            <p class="mb-4 text-txt-secondary fs-14">投票率</p>
+                                            <p class="mb-4 fw-bold">66.27%</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="pe-24">
+                                            <p class="mb-4 text-txt-secondary fs-14">有效票數</p>
+                                            <p class="mb-4 fw-bold">12,284,970</p>
+                                        </div>
+                                        <div class="pe-24">
+                                            <p class="mb-4 text-txt-secondary fs-14">無效票數</p>
+                                            <p class="mb-4 fw-bold">163,332</p>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
                     </div>
-                    <!-- votes overall -->
-                    <div class="px-24 py-16 bg-white rounded rounded-3 d-flex">
-                        <div id="chartVoteRate" class="me-12"></div>
-                        <div class="d-flex flex-column justify-content-between">
-                            <div class="d-flex">
-                                <div class="pe-24">
-                                    <p class="mb-4 text-txt-secondary fs-14">投票數</p>
-                                    <p class="mb-4 fw-bold">12,448,302</p>
-                                </div>
-                                <div class="pe-24">
-                                    <p class="mb-4 text-txt-secondary fs-14">投票率</p>
-                                    <p class="mb-4 fw-bold">66.27%</p>
-                                </div>
-                            </div>
-                            <div class="d-flex">
-                                <div class="pe-24">
-                                    <p class="mb-4 text-txt-secondary fs-14">有效票數</p>
-                                    <p class="mb-4 fw-bold">12,284,970</p>
-                                </div>
-                                <div class="pe-24">
-                                    <p class="mb-4 text-txt-secondary fs-14">無效票數</p>
-                                    <p class="mb-4 fw-bold">163,332</p>
-                                </div>
-                            </div>
+                </section>
+                <!-- 3-2. 政黨得票數 -->
+                <section class="d-flex mb-24">
+                    <!-- (1) 得票數  -->
+                    <div class="p-16 border border-secondary rounded rounded-3 me-20">
+                        <div class="d-flex justify-content-between align-items-center pb-20 py-16">
+                            <h5>歷屆政黨得票數</h5>
+                            <!-- 圖表標示 -->
+                            <ul class="d-flex m-0 p-0">
+                                <li class="fs-12 pe-4">
+                                    <span 
+                                        class="d-inline-block bg-role-1 rounded" 
+                                        style="width: 8px; height: 8px;">
+                                    </span> 
+                                    蝙蝠黨
+                                </li>
+                                <li class="fs-12 pe-4">
+                                    <span 
+                                        class="d-inline-block bg-role-2 rounded" 
+                                        style="width: 8px; height: 8px;">
+                                    </span> 
+                                    弓箭黨
+                                </li>
+                                <li class="fs-12 pe-4">
+                                    <span 
+                                        class="d-inline-block bg-role-3 rounded" 
+                                        style="width: 8px; height: 8px;">
+                                    </span> 
+                                    木棍黨
+                                </li>
+                            </ul>
                         </div>
+                        <!-- File: chart-bar-party.js -->
+                        <div id="chartBarParty" class="me-12"></div>
                     </div>
-                </div>
+                    <!-- (2) 得票率  -->
+                    <div class="p-16 border border-secondary rounded rounded-3">
+                        <div class="d-flex justify-content-between align-items-center pb-20 py-16">
+                            <h5>歷屆政黨得票率</h5>
+                            <!-- 圖表標示 -->
+                            <ul class="d-flex m-0 p-0">
+                                <li class="fs-12 pe-4">
+                                    <span 
+                                        class="d-inline-block bg-role-1 rounded" 
+                                        style="width: 8px; height: 8px;">
+                                    </span> 
+                                    蝙蝠黨
+                                </li>
+                                <li class="fs-12 pe-4">
+                                    <span 
+                                        class="d-inline-block bg-role-2 rounded" 
+                                        style="width: 8px; height: 8px;">
+                                    </span> 
+                                    弓箭黨
+                                </li>
+                                <li class="fs-12 pe-4">
+                                    <span 
+                                        class="d-inline-block bg-role-3 rounded" 
+                                        style="width: 8px; height: 8px;">
+                                    </span> 
+                                    木棍黨
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- File: chart-line-party.js -->
+                        <div id="chartLineParty" class="me-12"></div>
+                    </div>
+                </section>
+                <!-- 3-3. 各縣市投票總覽 -->
+                <section>
+                    <h5>各縣市投票總覽</h5>
+                    <table class="table table-hover fs-14">
+                        <thead class="bg-secondary text-txt-secondary">
+                        <tr>
+                            <th scope="col" style="width: 15%;">地區</th>
+                            <th scope="col" style="width: 20%;">得票率</th>
+                            <th scope="col" style="width: 22%;">當選人</th>
+                            <th scope="col" style="width: 18%;">投票數</th>
+                            <th scope="col" style="width: 18%;">投票率</th>
+                            <th scope="col" style="width: 7%;"></th>
+                        </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- File: data.js -->
+                        </tbody>
+                    </table>
+                </section>
             </div>
-            <!-- Section: 歷屆政黨 -->
-            <div class="d-flex mb-24">
-                <!-- 得票數  -->
-                <div class="p-16 border border-secondary rounded rounded-3 me-20">
-                    <div class="d-flex justify-content-between align-items-center pb-20 py-16">
-                        <h5>歷屆政黨得票數</h5>
-                        <ul class="d-flex m-0 p-0">
-                            <li class="fs-12 pe-4"><span class="d-inline-block bg-role-1 rounded" style="width: 8px; height: 8px;"></span> 蝙蝠黨</li>
-                            <li class="fs-12 pe-4"><span class="d-inline-block bg-role-2 rounded" style="width: 8px; height: 8px;"></span> 弓箭黨</li>
-                            <li class="fs-12 pe-4"><span class="d-inline-block bg-role-3 rounded" style="width: 8px; height: 8px;"></span> 木棍黨</li>
-                        </ul>
-                    </div>
-                    <div id="chartBarParty" class="me-12"></div>
-                </div>
-                <!-- 得票率%  -->
-                <div class="p-16 border border-secondary rounded rounded-3">
-                    <div class="d-flex justify-content-between align-items-center pb-20 py-16">
-                        <h5>歷屆政黨得票率</h5>
-                        <ul class="d-flex m-0 p-0">
-                            <li class="fs-12 pe-4"><span class="d-inline-block bg-role-1 rounded" style="width: 8px; height: 8px;"></span> 蝙蝠黨</li>
-                            <li class="fs-12 pe-4"><span class="d-inline-block bg-role-2 rounded" style="width: 8px; height: 8px;"></span> 弓箭黨</li>
-                            <li class="fs-12 pe-4"><span class="d-inline-block bg-role-3 rounded" style="width: 8px; height: 8px;"></span> 木棍黨</li>
-                        </ul>
-                    </div>
-                    <div id="chartLineParty" class="me-12"></div>
-                </div>
-            </div>
-            <!-- Section: 各縣市投票總覽 -->
-            <h5>各縣市投票總覽</h5>
-            <table class="table table-hover fs-14">
-                <thead class="bg-secondary text-txt-secondary">
-                  <tr>
-                    <th scope="col" style="width: 15%;">地區</th>
-                    <th scope="col" style="width: 20%;">得票率</th>
-                    <th scope="col" style="width: 22%;">當選人</th>
-                    <th scope="col" style="width: 18%;">投票數</th>
-                    <th scope="col" style="width: 18%;">投票率</th>
-                    <th scope="col" style="width: 7%;"></th>
-                  </tr>
-                </thead>
-                <tbody id="tableBody">
-                  
-                </tbody>
-              </table>
+            <!-- 4. footer EJS -->
+            <%- include('./layout/footer'); -%>
         </main>
     </div>
 

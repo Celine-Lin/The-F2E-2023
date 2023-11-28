@@ -135,6 +135,7 @@ const data = [
 ];
 
 const table = document.getElementById('tableBody');
+const cadidate1 = "https://i.imgur.com/JtkZq1N.png";
 
 function render(){
   let str='';
@@ -150,7 +151,7 @@ function render(){
             </div>
         </td>
         <td>
-            <img src="/assets/images/small-cadidate1.png" class="rounded-circle me-8" width="32px" alt="candidate 1">
+            <img src="${cadidate1}" class="rounded-circle me-8" width="32px" alt="candidate 1">
             <span class="align-middle">${i.electee}</span>
         </td>
         <td>${i.votes}</td>
